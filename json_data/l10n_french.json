@@ -22,14 +22,14 @@
     },
 
     "questions": {
-        "ask_menu": "Menu principal - Commandes disponibles :\n* « jouer » - Lancer une partie\n* « options » - Menu des options\n> ",
+        "ask_menu": "Menu principal - Commandes disponibles :\n* « jouer » - Lancer une partie\n* « options » - Menu des options",
         "ask_menu_fail": "Commande inconnue, écrivez une commande valide.\n> ",
-        "ask_options": "Quelle option souhaitez-vous modifier ? Écrivez « aide » pour afficher les commandes disponibles.\n> ",
-        "ask_options_fail": "Commande inconnue, retour aux options. Quelle option souhaitez-vous modifier ?\n> ",
-        "ask_command": "\nQue souhaitez vous faire ?\n> ",
-        "ask_command_fail": "Commande non reconnue ou indisponible - Écrivez « aide » pour afficher la liste des commandes disponibles.\n> ",
-        "ask_action": "Quelle action souhaitez vous faire ?\n> ",
-        "ask_action_fail": "Action non reconnue ou indisponible - Écrivez « aide » pour afficher la liste des actions disponibles.\n> "
+        "ask_options": "Quelle option souhaitez-vous modifier ? Écrivez « aide » pour afficher les commandes disponibles.",
+        "ask_options_fail": "Commande inconnue, retour aux options. Quelle option souhaitez-vous modifier ?",
+        "ask_command": "\nQue souhaitez vous faire ?",
+        "ask_command_fail": "Commande non reconnue ou indisponible - Écrivez « aide » pour afficher la liste des commandes disponibles.",
+        "ask_action": "Quelle action souhaitez vous faire ?",
+        "ask_action_fail": "Action non reconnue ou indisponible - Écrivez « aide » pour afficher la liste des actions disponibles."
     },
 
     "quotes": {

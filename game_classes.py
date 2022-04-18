@@ -9,6 +9,8 @@ data_npcs = open_json("npcs")
 data_quests = open_json("quests")
 data_special_attacks = open_json("special_attacks")
 
+# biome_1 = Biome(**data_biomes)
+
 l10n = Localization()
 
 
@@ -42,7 +44,6 @@ class Character:
         self.max_health = self.health
         self.total_damage = self.damage + self.items_damage
         self.total_defense = self.defense + self.items_defense
-
 
     # =============================================== Affichage d'informations =========================================
     # Inventaire
@@ -133,6 +134,22 @@ class Character:
             total_defense = sum(armor_item.defense for armor_item in self.inventory["armor"].keys())
 
         return total_defense
+
+    # Dégâts infligés
+    def get_true_damage(self, is_player=True):
+        base_damage = self.total_damage
+
+        # 1/5 chances de coup critique
+        if rng(5) == 0:
+            print(custom_text("Coup critique !", 'green' if is_player else 'red', "bold"))
+            base_damage *= 1.25
+        else:
+            base_damage += rng(-1, 2)
+
+        final_damage = ceil(base_damage)
+
+        return 1 if final_damage < 1 else final_damage
+
 
     # =============================================== Commandes de gestion =============================================
     # Ajoute un objet à l'inventaire
@@ -351,6 +368,16 @@ class Quest:
         self.gold = gold
 
 
+quest_return_merchant = "Retourner voir le Marchand"
+quest_return_trappist = "Retourner voir le Trappeur"
+
+''' Type de quête
+Chasse aux monstres - Tuer X ennemis
+Trancheur de tête - Tuer tel boss
+Récolte d'objets - Ramener X objets
+'''
+
+
 # Biome
 class Biome:
     def __init__(
@@ -365,6 +392,9 @@ class Biome:
         self.turn = turn
         self.events = events
 
+biome_1 = Biome(**data_biomes["village"])
+
+print(vars(biome_1))
 
 # Event
 class Event:

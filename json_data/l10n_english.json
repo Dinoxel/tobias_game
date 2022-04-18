@@ -22,14 +22,14 @@
     },
 
     "questions": {
-        "ask_menu": "Main menu - Available commands :\n* \"play\" - Start a game\n* \"options\" - Options menu\n> ",
-        "ask_menu_fail": "Unknown command, write a valid command.\n> ",
-        "ask_options": "What option would you like to change? Write \"help\" to display the list of available commands.\n> ",
-        "ask_options_fail": "Unknown command, back to options. What option do you want to change?\n> ",
-        "ask_command": "\nWhat do you want to do?\n> ",
-        "ask_command_fail": "Unknown or unavailable command - Write \"help\" to display the list of available commands.\n> ",
-        "ask_action": "What action do you want to execute?\n> ",
-        "ask_action_fail": "Unknown or unavailable action - Write \"help\" to display the list of available actions.\n> "
+        "ask_menu": "Main menu - Available commands :\n* \"play\" - Start a game\n* \"options\" - Options menu",
+        "ask_menu_fail": "Unknown command, write a valid command.",
+        "ask_options": "What option would you like to change? Write \"help\" to display the list of available commands.",
+        "ask_options_fail": "Unknown command, back to options. What option do you want to change?",
+        "ask_command": "\nWhat do you want to do?",
+        "ask_command_fail": "Unknown or unavailable command - Write \"help\" to display the list of available commands.",
+        "ask_action": "What action do you want to execute?",
+        "ask_action_fail": "Unknown or unavailable action - Write \"help\" to display the list of available actions."
     },
 
     "quotes": {

@@ -1,17 +1,17 @@
 {
-    "forest": {
-        "name": "Forest",
+    "village": {
+        "name": "Village",
         "turn": -1,
         "events": ["neutral"]
     },
-    "caves": {
-        "name": "Caves",
+    "forest": {
+        "name": "Forest",
         "mobs": ["slime", "bat", "goblin"],
         "turn": 0,
         "events": ["wizardRing", "neutral", "bearAttack"]
     },
-    "village": {
-        "name": "Village",
+    "caves": {
+        "name": "Caves",
         "mobs": ["rat", "smolGoblin", "bat", "hobgoblin"],
         "turn": 10,
         "events": ["neutral"]

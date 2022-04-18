@@ -1,4 +1,5 @@
 from game_classes import *
+from commands import *
 from unidecode import unidecode
 from Levenshtein import jaro, ratio
 
@@ -21,31 +22,59 @@ def get_true_input(input_command: str, list_of_commands: list):
 
 
 # Vérifie la commande
-def verify_command(command_list: list, question: str, wrong_command=""):
-    while True:
+def verify_command(command_list: list, question: str, wrong_command="", is_new_game=False):
+    # asked commands += '\n> '
+
+    while True and not is_new_game:
         command = input(question + '\n> ')
 
         if command in command_list:
             break
 
-        if wrong_command:
-            print(wrong_command)
+        question = wrong_command
+    else:
+        command = "play"
 
     return command
 
 
+game_commands = ["menu", "kill", "inv"]
+game_question = 'Write "menu" to quit the game and return to the menu or "kill" to kill a monster'
+wrong_text = "Invalid command"
+
+# Définit une liste de tous les biomes
+# biome_list = [biome_village, biome_forest, biome_caves, biome_dumeors_den]
+# Définit un dictionnaire avec les biomes par ordre d'apparence
+# biome_dict = dict(sorted({biome.turn: biome for biome in biome_list}.items(), reverse=True))
+
+quest_return_merchant = "Retourner voir le Marchand"
+quest_return_trappist = "Retourner voir le Trappeur"
+
+
 class Game:
     def __init__(self):
+        self.player = Player()
+
+        self.starting_biome = Biome()
+        self.current_biome = self.starting_biome
+
+        self.killed_ennemies = dict()
+
         self.game_over = False
         self.game_command = ""
-        self.killed_ennemies = 0
-        self.player = Player()
-        print("Game has started!")
 
-    def add_kill_counter(self):
-        self.killed_ennemies += 1
+    def add_kill_counter(self, npc_id: str):
+        if npc_id not in self.killed_ennemies:
+            self.killed_ennemies[npc_id] = 1
+        else:
+            self.killed_ennemies[npc_id] += 1
 
     def display_endgame_stats(self):
+        if self.killed_ennemies:
+            print("Nombre de monstre tués :")
+            for enemy, count in self.killed_ennemies.items():
+                print(f"x{count} {enemy.name}")
+
         print("Killed ennemies:", self.killed_ennemies)
 
     def start(self):
@@ -54,26 +83,11 @@ class Game:
 
             if self.game_command == "kill":
                 print("You killed a monster")
-                self.add_kill_counter()
+                self.add_kill_counter("slime_1")
 
             elif self.game_command == "inv":
                 self.player.display_inventory()
 
-            elif self.game_command == "lang":
-                if l10n.lang == "french":
-                    l10n.set_language_to("english")
-                else:
-                    l10n.set_language_to("french")
-
             elif self.game_command == "menu":
                 print("Game over!")
                 self.game_over = True
-
-
-game_commands = ["menu", "kill", "inv", "lang"]
-game_question = 'Write "menu" to quit the game and return to the menu or "kill" to kill a monster'
-
-menu_commands = ["play", "options", 'quit']
-menu_question = 'Write "play" to play or "options" to access options'
-
-wrong_text = "Invalid command"

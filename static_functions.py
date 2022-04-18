@@ -128,31 +128,33 @@ def display_command_help():
 # =============================================== Renvoi de valeurs ====================================================
 # =============================== Définit la couleur du texte
 # Faire en sorte que color et emphasis puisse récupérer soit des valeurs de couleur soit d'emphase
-def custom_text(string: str, *modif_arg: str, do_colors_display=True):
+def custom_text(string: str, *modif_arg: str, display_color=True):
     color, emphasis = 39, 1
 
-    if do_colors_display:
-        color_list = {"white": 29,
-                      "red": 31,
-                      "green": 32,
-                      "yellow": 33,
-                      "blue": 34,
-                      "magenta": 35,
-                      "cyan": 36
-                      }
-        emphasis_list = {"bold": 1,
-                         "italic": 3,
-                         "underline": 4
-                         }
+    color_list = {"white": 29,
+                  "red": 31,
+                  "green": 32,
+                  "yellow": 33,
+                  "blue": 34,
+                  "magenta": 35,
+                  "cyan": 36
+                  }
+    emphasis_list = {"bold": 1,
+                     "italic": 3,
+                     "underline": 4
+                     }
 
-        for modif in modif_arg:
-            if modif in color_list:
-                color = color_list[modif]
+    for modif in modif_arg:
+        if modif in color_list:
+            color = color_list[modif]
 
-            if modif in emphasis_list:
-                emphasis = emphasis_list[modif]
+        if modif in emphasis_list:
+            emphasis = emphasis_list[modif]
 
-    return f"\033[{emphasis};{color};48m{string}\u001b[0m"
+    if display_color:
+        return f"\033[{emphasis};{color};48m{string}\u001b[0m"
+    else:
+        return string
 
 
 # Définit les noms alternatifs

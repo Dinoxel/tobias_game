@@ -7,7 +7,6 @@ from os import system
 from unidecode import unidecode
 from Levenshtein import jaro, ratio
 from datetime import timedelta
-from game_data import *
 system('cls')
 
 cheat_mode = True
@@ -582,6 +581,16 @@ while True:
                         print(custom_text("Les options ont été remis par défaut.", "yellow"))
 
                 command = command_func(input_func(ask_options), list_command_options)
+
+
+
+
+
+
+
+
+
+
 
         elif command in command_menu_play or is_new_game:
             # Définit les textes d'input de commande

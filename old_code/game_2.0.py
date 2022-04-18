@@ -7,8 +7,8 @@ from os import system
 from unidecode import unidecode
 from Levenshtein import jaro, ratio
 from datetime import timedelta
-from game_data import *
-from static_functions import *
+
+
 system('cls')
 
 # To Do List:
