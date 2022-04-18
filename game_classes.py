@@ -11,6 +11,7 @@ data_special_attacks = open_json("special_attacks")
 
 l10n = Localization()
 
+
 # Character
 class Character:
     def __init__(

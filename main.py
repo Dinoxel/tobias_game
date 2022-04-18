@@ -1,4 +1,5 @@
 from game import *
+from commands import *
 from os import system
 system('cls')
 
