@@ -1,0 +1,193 @@
+{
+    "lang": "french",
+
+    "inventory": {
+        "intro": "Inventaire : ",
+        "no_items": "Aucun objet dans l'inventaire.",
+        "consumable_intro": "Consommables",
+        "consumable_desc_heal": "(Soigne {} de santé)",
+        "consumable_desc_oust": "(Éloigne les ennemis sur {} cases)",
+        "armor_intro": "Armure (totale : {} de défense)",
+        "armor_desc": "({} de défense)",
+        "weapon_intro": "Armes (équipée : {})",
+        "weapon_desc": "({} de dégâts)",
+        "ingredient_intro": "Ingrédients",
+        "quest_intro": "Objets de Quête"
+    },
+
+    "options": {
+        "selected_lang": "La langue est ¤¤¤ définie sur Français.",
+        "already": "déjà",
+        "now": "désormais"
+    },
+
+    "questions": {
+        "ask_menu": "Menu principal - Commandes disponibles :\n* « jouer » - Lancer une partie\n* « options » - Menu des options\n> ",
+        "ask_menu_fail": "Commande inconnue, écrivez une commande valide.\n> ",
+        "ask_options": "Quelle option souhaitez-vous modifier ? Écrivez « aide » pour afficher les commandes disponibles.\n> ",
+        "ask_options_fail": "Commande inconnue, retour aux options. Quelle option souhaitez-vous modifier ?\n> ",
+        "ask_command": "\nQue souhaitez vous faire ?\n> ",
+        "ask_command_fail": "Commande non reconnue ou indisponible - Écrivez « aide » pour afficher la liste des commandes disponibles.\n> ",
+        "ask_action": "Quelle action souhaitez vous faire ?\n> ",
+        "ask_action_fail": "Action non reconnue ou indisponible - Écrivez « aide » pour afficher la liste des actions disponibles.\n> "
+    },
+
+    "quotes": {
+        "intro": "Année 359, contrée de Blère Ouitch\nVous incarnez Tobias, un jeune explorateur en quête d'aventures ayant récemment accepté une chasse aux monstres.\nLes portes du village d'où vous venez de faire escale viennent de se refermer derrière vous afin de protéger le village des monstres environnants, vous ne pouvez plus faire marche arrière.\nL'entrée de la tanière du monstre se trouve à {} cases devant vous.",
+        "intro2": "Année 359, contrée de Blère Ouitch\nVous incarnez Tobias, un jeune explorateur en quête d'aventures.\nVous commencez dans le village de départ.\nLes portes du village d'où vous venez de faire escale viennent de se refermer derrière vous afin de protéger le village des monstres environnants, vous ne pouvez plus faire marche arrière."
+    },
+
+    "languages": {
+        "french": "Français",
+        "english": "Anglais (English)",
+        "german": "Allemand (Deutsch)"
+    },
+
+    "items": {
+        "item_1": {
+            "name": "Potion de soin",
+            "plural": "Potions de soin",
+            "desc": "Une petite potion qui régénère 15 de santé"
+            },
+        "item_2": {
+            "name": "Hache de gobelin",
+            "plural": "Haches de gobelin",
+            "desc": "Une hache couverte de sang composée de divers morceaux de ferailles"
+        },
+        "item_3": {
+            "name":  "Anneau énigmatique",
+            "plural": "Anneaux énigmatiques",
+            "desc": "Un anneau élégant serti d'un haut de forme"
+        },
+        "item_4": {
+            "name": "Épée basique",
+            "plural": "Épées basiques",
+            "desc": "Une épée tout à fait sommaire"
+        },
+        "item_5": {
+            "name": "Vêtement rudimentaire",
+            "plural": "Vêtements rudimentaires",
+            "desc": "Des fripes appartenant à votre oncle"
+        },
+        "item_6": {
+            "name": "Pantalon rudimentaire",
+            "plural": "Pantalons rudimentaires",
+            "desc": "Un vieux pantalon délavé"
+        },
+        "item_7": {
+            "name": "Chaussures rudimentaires",
+            "plural": "Chaussures rudimentaires",
+            "desc": "Cette vieille paire semble avoir déteint avec les années"
+        },
+        "item_8": {
+            "name": "Forte potion de soin",
+            "plural": "Fortes potions de soin",
+            "desc": "Une grande potion qui régénère 35 de santé"
+        },
+        "item_9": {
+            "name": "Tête de Dumeors",
+            "plural": "Têtes de Dumeors",
+            "desc": "La tête coupée de la bête"
+        },
+        "item_10": {
+            "name": "Ceinture de gobelin",
+            "plural": "Ceintures de gobelin",
+            "desc": "Une ceinture rustique composée de vieux morceaux de cuir"
+        },
+        "item_11": {
+            "name": "Fiole de venin",
+            "plural": "Fioles de venin",
+            "desc": ""
+        },
+        "item_12": {
+            "name": "Parfum nauséabond",
+            "plural": "Parfums nauséabonds",
+            "desc": "Un parfum aux odeurs putrides qui éloigne les ennemis pour 5 cases"
+        },
+        "item_13": {
+            "name": "Bottes gobelines",
+            "plural": "Bottes gobelines",
+            "desc": ""
+        },
+        "item_14": {
+            "name": "Bâton gobelin",
+            "plural": "Bâtons gobelins",
+            "desc": ""
+        },
+        "item_15": {
+            "name": "Bonnet gobelin",
+            "plural": "Bonnets gobelins",
+            "desc": ""
+        }
+    },
+
+    "monsters": {
+        "monster_1": {
+            "name": "Gelée",
+            "plural": "Gelées",
+            "desc": ""
+        },
+        "monster_2": {
+            "name": "Chauve-souris",
+            "plural": "Chauves-souris",
+            "desc": ""
+        },
+        "monster_3": {
+            "name": "Gobelin",
+            "plural": "Gobelins",
+            "desc": ""
+        },
+        "monster_4": {
+            "name": "Rat",
+            "plural": "Rats",
+            "desc": ""
+        },
+        "monster_6": {
+            "name": "Hobgobelin",
+            "plural": "Hobgobelins",
+            "desc": ""
+        },
+        "monster_7": {
+            "name": "Dumeors l'Acéré",
+            "plural": "Dumeors l'Acéré",
+            "desc": ""
+        },
+        "monster_5": {
+            "name": "P'tit gobelin",
+            "plural": "P'tits gobelins",
+            "desc": ""
+        }
+    },
+
+    "npcs" : {
+        "npc_1": {
+            "name": "Marchand",
+            "plural": "Marchands",
+            "desc": ""
+        },
+        "npc_2": {
+            "name": "Trappeur",
+            "plural": "Trappeurs",
+            "desc": ""
+        }
+    },
+
+    "biomes": {
+        "biome_1": {
+            "name": "Forêt",
+            "desc": ""
+        },
+        "biome_2": {
+            "name": "Grottes",
+            "desc": ""
+        },
+        "biome_3": {
+            "name": "Village",
+            "desc": ""
+        },
+        "biome_4": {
+            "name": "Tanière de Dumeors",
+            "desc": ""
+        }
+    }
+}

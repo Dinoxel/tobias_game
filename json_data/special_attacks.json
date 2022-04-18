@@ -1,0 +1,16 @@
+{
+    "clawHit" : {
+        "name": "Coup de griffe",
+        "attack_type": "ground",
+        "percent": 1.0,
+        "attempt_min": 2,
+        "attempt_max": 5
+    },
+    "heavyStrike": {
+        "name": "Frappe lourde",
+        "attack_type": "ground",
+        "percent": 1.25,
+        "attempt_min": 1,
+        "attempt_max": 1
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "wizardRing":{
+        "desc": "Quizz du magicien pour anneau",
+        "event_type": "positive"
+    },
+    "neutral": {
+        "desc": "Phrases neutres d'observation"
+    },
+    "bearAttack": {
+        "desc": "Attaque d'ours",
+        "event_type": "negative",
+        "damaging": 20
+    }
+
+}

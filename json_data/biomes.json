@@ -1,0 +1,25 @@
+{
+    "forest": {
+        "name": "Forest",
+        "turn": -1,
+        "events": ["neutral"]
+    },
+    "caves": {
+        "name": "Caves",
+        "mobs": ["slime", "bat", "goblin"],
+        "turn": 0,
+        "events": ["wizardRing", "neutral", "bearAttack"]
+    },
+    "village": {
+        "name": "Village",
+        "mobs": ["rat", "smolGoblin", "bat", "hobgoblin"],
+        "turn": 10,
+        "events": ["neutral"]
+    },
+    "dumeorsDen": {
+        "name": "Dumeors' Den",
+        "mobs": ["dumeorsTheSharp"],
+        "turn": 20,
+        "events": ["neutral"]
+    }
+}

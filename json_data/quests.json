@@ -1,0 +1,32 @@
+{
+    "slimeOvercrowding1": {
+        "name": "Surpopulation de gelées",
+        "quest_type": "Chasse aux monstres",
+        "desc": "Tuer 5 gelées et faire son rapport au donneur de quêtes",
+        "progress": "Plus que {} monstre(s) à tuer",
+        "prog_counter": 5,
+        "lvl_mini": 0,
+        "experience": 65,
+        "gold": [15]
+    },
+    "gatherVenomVial": {
+        "name": "Du poison pour les poissons",
+        "quest_type": "Récolte d'objets",
+        "desc": "Ramener 4 fioles de venin de chauve-souris au donneur de quêtes",
+        "progress": "Plus que {} objet(s) à récupérer",
+        "prog_counter": 4,
+        "lvl_mini": 1,
+        "experience": 65,
+        "gold": [["venomVial", 4]]
+    },
+    "dumeorsQuest": {
+        "name": "Dumeors l'Acéré",
+        "quest_type": "Trancheur de tête",
+        "desc": "Ramener la tête de la bête au marchand",
+        "progress": "Tuer {}",
+        "prog_counter": 1,
+        "lvl_mini": 3,
+        "experience": 240,
+        "gold": [["dumeorsHead", 1]]
+    }
+}

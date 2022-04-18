@@ -1,0 +1,193 @@
+{
+    "lang": "english",
+
+    "inventory": {
+        "intro": "Inventory : ",
+        "no_items": "No items in inventory.",
+        "consumable_intro": "Consumables",
+        "consumable_desc_heal": "(Heal {} health)",
+        "consumable_desc_oust": "(Keep enemies away for {} squares)",
+        "armor_intro": "Armor (total: {} defense)",
+        "armor_desc": "({} defense)",
+        "weapon_intro": "Weapons (equipped: {})",
+        "weapon_desc": "({} damage)",
+        "ingredient_intro": "Ingredients",
+        "quest_intro": "Quest Items"
+    },
+
+    "options": {
+        "selected_lang": "The language is ¤¤¤ set to English.",
+        "already": "already",
+        "now": "now"
+    },
+
+    "questions": {
+        "ask_menu": "Main menu - Available commands :\n* \"play\" - Start a game\n* \"options\" - Options menu\n> ",
+        "ask_menu_fail": "Unknown command, write a valid command.\n> ",
+        "ask_options": "What option would you like to change? Write \"help\" to display the list of available commands.\n> ",
+        "ask_options_fail": "Unknown command, back to options. What option do you want to change?\n> ",
+        "ask_command": "\nWhat do you want to do?\n> ",
+        "ask_command_fail": "Unknown or unavailable command - Write \"help\" to display the list of available commands.\n> ",
+        "ask_action": "What action do you want to execute?\n> ",
+        "ask_action_fail": "Unknown or unavailable action - Write \"help\" to display the list of available actions.\n> "
+    },
+
+    "quotes": {
+        "intro": "Year 359, Blère Ouitch county\nYou play Tobias, a young explorer looking for adventures who have recently accepted a monster hunt.\nThe doors from the village you took a stepover just closed behind you in order to protect the village from surrounding monsters, you cannot go back.\nThe entrance to the monster's lair is {} squares in front of you.",
+        "intro2": ""
+    },
+
+    "languages": {
+        "french": "French (Français)",
+        "english": "English",
+        "german": "German (Deutsch)"
+    },
+
+    "items": {
+        "item_1": {
+            "name": "Healing Potion",
+            "plural": "Healing Potions",
+            "desc": "A small potion that restores 15 health"
+        },
+        "item_2": {
+            "name": "Goblin Axe",
+            "plural": "Goblin Axes",
+            "desc": "A blood covered axe composed of various metal scraps"
+        },
+        "item_3": {
+            "name": "Enigmatic Ring",
+            "plural": "Enigmatic Rings",
+            "desc": "A fancy ring set with a top hat"
+        },
+        "item_4": {
+            "name": "Simple Sword",
+            "plural": "Simple Swords",
+            "desc": "A quite sketchy sword"
+        },
+        "item_5": {
+            "name": "Basic Clothes",
+            "plural": "Basic Clothes",
+            "desc": "Some rags belonging to your uncle"
+        },
+        "item_6": {
+            "name": "Basic Pants",
+            "plural": "Basic Pants",
+            "desc": "A pants likely worn for manual labor"
+        },
+        "item_7": {
+            "name": "Basic Shoes",
+            "plural": "Basic Shoes",
+            "desc": "This old pair seems to have faded over the years"
+        },
+        "item_8": {
+            "name": "Greater Healing Potion",
+            "plural": "Greater Healing Potions",
+            "desc": "A great potion that restores 35 health"
+        },
+        "item_9": {
+            "name": "Dumeors Head",
+            "plural": "Dumeors Heads",
+            "desc": "The severed head of the beast"
+        },
+        "item_10": {
+            "name": "Goblin Belt",
+            "plural": "Goblin Belts",
+            "desc": "A rustic belt made of old pieces of leather"
+        },
+        "item_11": {
+            "name": "Venom Vial",
+            "plural": "Venom Vial",
+            "desc": ""
+        },
+        "item_12": {
+            "name": "Putrid Perfume",
+            "plural": "Putrid Perfumes",
+            "desc": "A putrid-smelling perfume that repels enemies for 5 squares"
+        },
+        "item_13": {
+            "name": "Goblin Boots",
+            "plural": "Goblin Boots",
+            "desc": ""
+        },
+        "item_14": {
+            "name": "Goblin Stick",
+            "plural": "Goblin Sticks",
+            "desc": ""
+        },
+        "item_15": {
+            "name": "Goblin Beanie",
+            "plural": "Goblin Beanies",
+            "desc": ""
+        }
+    },
+
+    "monsters": {
+        "monster_1": {
+            "name": "Slime",
+            "plural": "Slimes",
+            "desc": ""
+        },
+        "monster_2": {
+            "name": "Bat",
+            "plural": "Bats",
+            "desc": ""
+        },
+        "monster_3": {
+            "name": "Goblin",
+            "plural": "Goblins",
+            "desc": ""
+        },
+        "monster_4": {
+            "name": "Rat",
+            "plural": "Rats",
+            "desc": ""
+        },
+        "monster_5": {
+            "name": "Smol Goblin",
+            "plural": "Smol Goblins",
+            "desc": ""
+        },
+        "monster_6": {
+            "name": "Hobgoblin",
+            "plural": "Hobgoblins",
+            "desc": ""
+        },
+        "monster_7": {
+            "name": "Dumeors the Sharp",
+            "plural": "Dumeors the Sharp",
+            "desc": ""
+        }
+    },
+
+    "npcs": {
+        "npc_1": {
+            "name": "Merchant",
+            "plural": "Merchants",
+            "desc": ""
+        },
+        "npc_2": {
+            "name": "Trappist",
+            "plural": "Trappists",
+            "desc": ""
+        }
+    },
+
+    "biomes": {
+        "biome_1": {
+            "name": "Forest",
+            "desc": ""
+        },
+        "biome_2": {
+            "name": "Caves",
+            "desc": ""
+        },
+        "biome_3": {
+            "name": "Village",
+            "desc": ""
+        },
+        "biome_4": {
+            "name": "Dumeors' Den",
+            "desc": ""
+        }
+    }
+}
