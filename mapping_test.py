@@ -1,6 +1,5 @@
-from static_functions import *
+from game_classes import *
 
-l10n = Localization()
 # Chaque Biome doit avoir les propriétés de sa carte
 
 # Implémenter système de Fog of War avec zones accessibles ou non
@@ -38,11 +37,6 @@ map2 = [
 ]
 
 
-
-
-
-
-
 event = {
     "wizard_question": {
         "name": "Enigma",
@@ -51,9 +45,6 @@ event = {
         "fix": False
     },
 }
-
-
-
 biome = {
     "village": {
         "name": "Village",
@@ -64,10 +55,35 @@ biome = {
 }
 
 
+class Player_pos(Player):
+    def __init__(
+            self,
+    ):
+        super().__init__()
+        self.x_pos = 0
+        self.y_pos = 0
+
+    def get_player_pos(self):
+        print(self.x_pos, self.y_pos)
+        return self.x_pos, self.y_pos
+
+    def go_right(self):
+        self.x_pos += 1
+
+    def go_left(self):
+        self.x_pos -= 1
+
+    def go_up(self):
+        self.y_pos += 1
+
+    def go_down(self):
+        self.y_pos -= 1
+
+
 
 class Map:
-    def __init__(self, area):
-        self.area = area
+    def __init__(self):
+        self.area = None
 
 
 class Biome(Map):
@@ -75,4 +91,27 @@ class Biome(Map):
             self,
             **kwargs
     ):
-        super().__init__(**kwargs)
+        super().__init__() #**kwargs)
+
+
+map_test = Player_pos()
+
+while True:
+    player_input = input("Where do you want to go?\n> ")
+
+    if player_input == "left":
+        map_test.go_left()
+    elif player_input == "right":
+        map_test.go_right()
+    elif player_input == "up":
+        map_test.go_up()
+    elif player_input == "down":
+        map_test.go_down()
+    elif player_input == "pos":
+        map_test.get_player_pos()
+    else:
+        print("Wrong input")
+
+
+
+

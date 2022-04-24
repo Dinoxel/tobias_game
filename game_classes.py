@@ -1,6 +1,9 @@
 from static_functions import *
 from math import ceil
 
+# for x in ["biomes", "events", "items", "monsters", "npcs", "quests", "special_attacks"]:
+#     globals()["data_" + x] = open_json(x)
+
 data_biomes = open_json("biomes")
 data_events = open_json("events")
 data_items = open_json("items")
@@ -150,6 +153,18 @@ class Character:
 
         return 1 if final_damage < 1 else final_damage
 
+    # =============================================== Commandes d'action ===============================================
+    # Utilise un objet
+    def use_item(self, item):
+        if item.heals and self.health != self.max_health:
+            self.del_from_inv(item, 1)
+
+            if self.health + item.heals > self.max_health:
+                self.health = self.max_health
+            else:
+                self.health += item.heals
+        else:
+            print("Nothing happened, no item was consumed.")
 
     # =============================================== Commandes de gestion =============================================
     # Ajoute un objet à l'inventaire
@@ -236,19 +251,6 @@ Défense : {self.total_defense} ({self.defense} +{self.items_defense})\t\tBours
     # Expérience restante pour monter d'un niveau
     def get_next_level_exp(self):
         return self.exp_to_levelup - self.experience
-
-    # =============================================== Commandes d'action ===============================================
-    # Utilise un objet
-    def use_item(self, item):
-        if item.heals and self.health != self.max_health:
-            self.del_from_inv(item, 1)
-
-            if self.health + item.heals > self.max_health:
-                self.health = self.max_health
-            else:
-                self.health += item.heals
-        else:
-            print("Nothing happened, no item was consumed.")
 
     # =============================================== LEVEL-UP =========================================================
     # Gère l'ajout d'exp, le système de monter de niveau et l'ajout de statistiques en montant d'un niveau
@@ -365,7 +367,29 @@ class Quest:
         self.prog_counter = prog_counter  # Équivalent au nombre total à accomplir (nbr de monstres à tuer, d'objets à récup...)
         self.lvl_mini = lvl_mini  # Niveau conseillé pour la quête
         self.experience = experience
-        self.gold = gold
+        self.gold = gold  # (X, Y) --> X * Y
+
+    def get_gold(self):
+        return self.gold[0] * self.gold[1]
+
+    def display_progress(self):
+        if self.prog_counter != self.progress:
+            if self.quest_type == "Chasse aux monstres":
+                print(f"Vous avez tué tous les montres !")
+            elif self.quest_type == "Trancheur de tête":
+                print(f"Vous avez vaincu le boss !")
+            elif self.quest_type == "Récolte d'objets":
+                print(f"Vous avez récolter tous les objets !")
+        else:
+            if self.quest_type == "Chasse aux monstres":
+                print(f"Plus que {self.progress} monstres à tuer.")
+            elif self.quest_type == "Trancheur de tête":
+                print(f"Plus que {self.progress} boss à tuer")
+            elif self.quest_type == "Récolte d'objets":
+                print(f"Plus que {self.progress} objets à récupérer")
+
+    def display_level_mini(self):
+        print(f"Niveau conseillé : {self.lvl_mini}")
 
 
 quest_return_merchant = "Retourner voir le Marchand"
@@ -392,9 +416,6 @@ class Biome:
         self.turn = turn
         self.events = events
 
-biome_1 = Biome(**data_biomes["village"])
-
-print(vars(biome_1))
 
 # Event
 class Event:
@@ -462,3 +483,7 @@ class SpecialAttack:
         self.attempt_min = attempt_min
         self.attempt_max = attempt_max
         self.attempt = (attempt_min, attempt_max)  # (X, Y) --> X chances min sur Y chances max
+
+a = Character()
+
+a.add_to_inv(2, "healingPotion")
