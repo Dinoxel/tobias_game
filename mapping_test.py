@@ -62,53 +62,86 @@ class Player_pos(Player):
         super().__init__()
         self.x_pos = 0
         self.y_pos = 0
+        self.pos = self.x_pos, self.y_pos
 
-    def get_player_pos(self):
-        print(self.x_pos, self.y_pos)
-        return self.x_pos, self.y_pos
+        self.min_x_pos = -2
+        self.max_x_pos = 3
+        self.min_y_pos = -2
+        self.max_y_pos = 3
 
-    def go_right(self):
-        self.x_pos += 1
+    def redefine_pos(self):
+        self.pos = self.x_pos, self.y_pos
 
-    def go_left(self):
-        self.x_pos -= 1
+    def display_pos(self):
+        print(self.pos)
 
-    def go_up(self):
-        self.y_pos += 1
+    def go(self, where):
+        if where == "right":
+            if self.x_pos != self.max_x_pos:
+                self.x_pos += 1
+                print(f"Moved {where}")
+            else:
+                print(f"Cannot go {where} anymore")
 
-    def go_down(self):
-        self.y_pos -= 1
+        elif where == "left":
+            if self.x_pos != self.min_x_pos:
+                self.x_pos -= 1
+                print(f"Moved {where}")
+            else:
+                print(f"Cannot go {where} anymore")
+
+        elif where == "up":
+            if self.y_pos != self.max_y_pos:
+                self.y_pos += 1
+                print(f"Moved {where}")
+            else:
+                print(f"Cannot go {where} anymore")
+
+        elif where == "down":
+            if self.y_pos != self.min_y_pos:
+                self.y_pos -= 1
+                print(f"Moved {where}")
+            else:
+                print(f"Cannot go {where} anymore")
+
+        self.redefine_pos()
+
+forest_biome = Biome(**(data_biomes["forest"]))
 
 
-
-class Map:
-    def __init__(self):
-        self.area = None
+print(vars(forest_biome))
 
 
-class Biome(Map):
+class Biome_map(Biome):
     def __init__(
             self,
-            **kwargs
     ):
-        super().__init__() #**kwargs)
+        super().__init__("Jungle", 1, ())
+        self.area = [
+            [1, 3, 0, 0, 1],
+        ]
+        self.start_x_pos = 0
+        self.start_y_pos = 1
 
 
-map_test = Player_pos()
+map_test = Biome_map()
+
+
+player = Player_pos()
 
 while True:
     player_input = input("Where do you want to go?\n> ")
 
     if player_input == "left":
-        map_test.go_left()
+        player.go("left")
     elif player_input == "right":
-        map_test.go_right()
+        player.go("right")
     elif player_input == "up":
-        map_test.go_up()
+        player.go("up")
     elif player_input == "down":
-        map_test.go_down()
+        player.go("down")
     elif player_input == "pos":
-        map_test.get_player_pos()
+        player.display_pos()
     else:
         print("Wrong input")
 

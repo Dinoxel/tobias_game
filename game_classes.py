@@ -412,9 +412,9 @@ class Biome:
             mobs=tuple()
     ):
         self.name = name
-        self.mobs = mobs
         self.turn = turn
         self.events = events
+        self.mobs = mobs
 
 
 # Event
@@ -483,7 +483,3 @@ class SpecialAttack:
         self.attempt_min = attempt_min
         self.attempt_max = attempt_max
         self.attempt = (attempt_min, attempt_max)  # (X, Y) --> X chances min sur Y chances max
-
-a = Character()
-
-a.add_to_inv(2, "healingPotion")
