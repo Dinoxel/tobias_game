@@ -53,10 +53,11 @@ quest_return_trappist = "Retourner voir le Trappeur"
 
 class Game:
     def __init__(self):
-        self.starting_biome = Biome(**data_biomes["forest"])
+        self.player = Player()
+
+        self.starting_biome = Biome()
         self.current_biome = self.starting_biome
 
-        self.player = Player()
         self.killed_ennemies = dict()
 
         self.game_over = False
