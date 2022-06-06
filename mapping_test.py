@@ -3,20 +3,17 @@ from game_classes import *
 # Implémenter système de Fog of War avec zones accessibles ou non
 
 
-event = {
+event_test = {
     "wizard_question": {
         "name": "Enigma",
-        "x_loc": 0,
-        "y_loc": 0,
-        "fix": False
-    },
+        "loc": (1, 8),
+        "fix": False,
+        "desc": "Enigma",
+        "damaging": 20
+    }
 }
 
 current_biome = Biome(**data_biomes["forest"])
-
-
-
-
 
 
 class Player_pos(Player):
@@ -29,6 +26,9 @@ class Player_pos(Player):
 
     def get_player_pos(self):
         return self.y_pos, self.x_pos
+
+    def get_map_pos(self, plus_y=0, plus_x=0):
+        return self.biome_area[self.y_pos + plus_y][self.x_pos + plus_x]
 
     def display_map(self, display_full_map=True):
         replacing_dict = {
@@ -70,34 +70,28 @@ class Player_pos(Player):
         print(self.get_player_pos())
 
     def event_checker(self):
-        event_dict = {
-            (5, 6): "You found a chest!"}
-
-        for k, v in event_dict.items():
-            if k == (self.y_pos, self.x_pos):
-                print(v)
+        for event_name, event_info in event_test.items():
+            if event_info["loc"] == self.get_player_pos():
+                print(event_name)
 
     def go(self, where):
-        previous_pos = self.x_pos, self.y_pos
-
-        pos_dict = {
+        directions_dict = {
             "right": {"row": 0, "col": 1},
             "left": {"row": 0, "col": -1},
-            "up": {"row": -1, "col": 0},
-            "down": {"row": 1, "col": 0}
+            "top": {"row": -1, "col": 0},
+            "bottom": {"row": 1, "col": 0}
         }
 
-        for direction, travel in pos_dict.items():
-            if direction == where and self.biome_area[self.y_pos + travel["row"]][self.x_pos + travel["col"]] != 1:
-                if travel["row"] == 0:
-                    self.x_pos = self.x_pos + travel["col"]
-                else:
-                    self.y_pos = self.y_pos + travel["row"]
+        direction = directions_dict[where]
 
-        if previous_pos != (self.x_pos, self.y_pos):
+        if self.get_map_pos(direction["row"], direction["col"]) != 1:
             print(f"Moved {where}")
+            self.x_pos = self.x_pos + direction["col"]
+            self.y_pos = self.y_pos + direction["row"]
+
             self.display_map()
             self.event_checker()
+
         else:
             print(f"Cannot go to the {where}")
 
@@ -121,9 +115,9 @@ while True:
     elif player_input in ["right", "r"]:
         player.go("right")
     elif player_input in ["up", "u", "top", "t"]:
-        player.go("up")
-    elif player_input in ["down", "bot", "b", "d"]:
-        player.go("down")
+        player.go("top")
+    elif player_input in ["down", "bot", "b", "d", "bottom"]:
+        player.go("bottom")
     elif player_input == "pos":
         player.display_pos()
     else:
