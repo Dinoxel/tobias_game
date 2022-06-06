@@ -12,7 +12,7 @@ data_npcs = open_json("npcs")
 data_quests = open_json("quests")
 data_special_attacks = open_json("special_attacks")
 
-# biome_1 = Biome(**data_biomes)
+# biome_1 = Biome(**data_biomes["forest"])
 
 l10n = Localization()
 
@@ -409,11 +409,14 @@ class Biome:
             name: str,
             turn: int,
             events: tuple,
+            area: tuple,
             mobs=tuple()
+
     ):
         self.name = name
         self.turn = turn
         self.events = events
+        self.area = area
         self.mobs = mobs
 
 
