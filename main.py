@@ -3,7 +3,6 @@ from os import system
 system('cls')
 
 
-
 menu_commands = ["play", "options", "lang", 'quit']
 menu_question = 'Write "play" to play or "options" to access options'
 
@@ -15,6 +14,7 @@ ask_options_fail = custom_text(l10n.get("ask_options_fail"), "blue")
 ask_options = custom_text(l10n.get("ask_options"), "blue")
 l10n.reset_main_key()
 
+
 class Menu:
     def __init__(self):
         self.menu_command = ""
@@ -25,7 +25,6 @@ class Menu:
 
         self.was_in_options = False
         self.is_new_game = False
-
 
     def start(self):
         while True:
